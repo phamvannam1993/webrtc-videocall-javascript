@@ -1,7 +1,4 @@
-const webSocket = io.connect('https://chat-nodejs-t8v9.onrender.com', {
-    enabledTransports: ["https"],
-    transports: ['websocket', 'polling']
- });
+const webSocket = new WebSocket("wss://webrtc-videocall-javascript.onrender.com")
 
 webSocket.onmessage = (event) => {
     handleSignallingData(JSON.parse(event.data))
